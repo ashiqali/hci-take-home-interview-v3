@@ -1,0 +1,325 @@
+{
+  "Hospitals": [
+    {
+      "Id": "ff0c022e-1aff-4ad8-2231-08db0378ac98",
+      "Name": "Default Hospital",
+      "Address": "123 Main St"
+    },
+    {
+      "Id": "3b9a7e15-bc68-45b8-9b70-df3e29a2d4fc",
+      "Name": "Greenwood Medical Center",
+      "Address": "456 Oak Ave"
+    },
+    {
+      "Id": "b1d8c7b6-05d8-4e3c-bb3a-5a7f64f7d2d3",
+      "Name": "Westside Clinic",
+      "Address": "789 Pine Rd"
+    },
+    {
+      "Id": "e8d9d6d1-1c76-49d2-b3a5-1d7c6e5b99e8",
+      "Name": "Central Health Clinic",
+      "Address": "101 Elm St"
+    },
+    {
+      "Id": "b9c1e6b1-4b9d-4236-b72f-b65eebd6f5d1",
+      "Name": "Sunrise Hospital",
+      "Address": "202 Maple St"
+    }
+  ],
+  "Patients": [
+    {
+      "Id": "c00b9ff3-b1b6-42fe-8b5a-4c28408fb64a",
+      "FirstName": "John",
+      "LastName": "Sweeney",
+      "Email": "john.sweeney@gmail.com",
+      "DateOfBirth": "1992-01-04",
+      "CreatedDate": "2024-01-15",
+      "PatientHospitals": [
+        {
+          "PatientId": "c00b9ff3-b1b6-42fe-8b5a-4c28408fb64a",
+          "HospitalId": "ff0c022e-1aff-4ad8-2231-08db0378ac98",
+          "VisitId": "a7a5182a-995c-4bce-bce0-6038be112b7b"
+        }
+      ]
+    },
+    {
+      "Id": "1ec2d3f7-8aa8-4bf5-91b8-045378919049",
+      "FirstName": "Vinny",
+      "LastName": "Lawlor",
+      "Email": "vinny.lawlor@gmail.com",
+      "DateOfBirth": "1995-01-04",
+      "CreatedDate": "2024-02-28",
+      "PatientHospitals": [
+        {
+          "PatientId": "1ec2d3f7-8aa8-4bf5-91b8-045378919049",
+          "HospitalId": "b9c1e6b1-4b9d-4236-b72f-b65eebd6f5d1",
+          "VisitId": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
+        },
+        {
+          "PatientId": "1ec2d3f7-8aa8-4bf5-91b8-045378919049",
+          "HospitalId": "b9c1e6b1-4b9d-4236-b72f-b65eebd6f5d1",
+          "VisitId": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c"
+        },
+        {
+          "PatientId": "1ec2d3f7-8aa8-4bf5-91b8-045378919049",
+          "HospitalId": "3b9a7e15-bc68-45b8-9b70-df3e29a2d4fc",
+          "VisitId": "a8b9c0d1-2e3f-4a5b-6c7d-8e9f0a1b2c3d"
+        }
+      ]
+    },
+    {
+      "Id": "d5a1b3e8-7f4c-4e4a-9b5f-8d9e2c3f6a0b",
+      "FirstName": "AsiqAli",
+      "LastName": "Ziaudeen",
+      "Email": "ashiq.be@gmail.com",
+      "DateOfBirth": "1992-05-27",
+      "CreatedDate": "2024-03-12",
+      "PatientHospitals": [
+        {
+          "PatientId": "d5a1b3e8-7f4c-4e4a-9b5f-8d9e2c3f6a0b",
+          "HospitalId": "e8d9d6d1-1c76-49d2-b3a5-1d7c6e5b99e8",
+          "VisitId": "f1a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b6c"
+        },
+        {
+          "PatientId": "d5a1b3e8-7f4c-4e4a-9b5f-8d9e2c3f6a0b",
+          "HospitalId": "b9c1e6b1-4b9d-4236-b72f-b65eebd6f5d1",
+          "VisitId": "a7b8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d"
+        },
+        {
+          "PatientId": "d5a1b3e8-7f4c-4e4a-9b5f-8d9e2c3f6a0b",
+          "HospitalId": "3b9a7e15-bc68-45b8-9b70-df3e29a2d4fc",
+          "VisitId": "b9c0d1e2-3f4a-5b6c-7d8e-9f0a1b2c3d4e"
+        },
+        {
+          "PatientId": "d5a1b3e8-7f4c-4e4a-9b5f-8d9e2c3f6a0b",
+          "HospitalId": "b1d8c7b6-05d8-4e3c-bb3a-5a7f64f7d2d3",
+          "VisitId": "9990d1e2-3f4a-5b6c-7d8e-9f0a1b2c3d4e"
+        },
+        {
+          "PatientId": "d5a1b3e8-7f4c-4e4a-9b5f-8d9e2c3f6a0b",
+          "HospitalId": "3b9a7e15-bc68-45b8-9b70-df3e29a2d4fc",
+          "VisitId": "b9c0d1e2-3f4a-5b6c-7d8e-9f0a1b2c4444"
+        }
+      ]
+    },
+    {
+      "Id": "c6d8b9d1-7b8a-4d8b-a5f7-c3b926e6f1b0",
+      "FirstName": "Emma",
+      "LastName": "Johnson",
+      "Email": "emma.johnson@gmail.com",
+      "DateOfBirth": "1988-07-15",
+      "CreatedDate": "2024-04-23",
+      "PatientHospitals": [
+        {
+          "PatientId": "c6d8b9d1-7b8a-4d8b-a5f7-c3b926e6f1b0",
+          "HospitalId": "3b9a7e15-bc68-45b8-9b70-df3e29a2d4fc",
+          "VisitId": "b2b3d4a5-6c7d-8e9f-0a1b-2c3d4e5f6789"
+        }
+      ]
+    },
+    {
+      "Id": "ff0c022e-1aff-4ad8-3535-08db0378ac98",
+      "FirstName": "Michael",
+      "LastName": "Brown",
+      "Email": "michael.brown@gmail.com",
+      "DateOfBirth": "1985-12-24",
+      "CreatedDate": "2024-05-07",
+      "PatientHospitals": [
+        {
+          "PatientId": "ff0c022e-1aff-4ad8-3535-08db0378ac98",
+          "HospitalId": "b1d8c7b6-05d8-4e3c-bb3a-5a7f64f7d2d3",
+          "VisitId": "b2b3d4a5-6c7d-8e9f-0a1b-2c3d4e5f6789"
+        }
+      ]
+    },
+    {
+      "Id": "e9f8d7c6-5b4a-3c2d-1a0b-9e8f7d6c5b4a",
+      "FirstName": "Sophia",
+      "LastName": "Williams",
+      "Email": "sophia.williams@gmail.com",
+      "DateOfBirth": "1990-11-01",
+      "CreatedDate": "2024-06-19",
+      "PatientHospitals": [
+        {
+          "PatientId": "e9f8d7c6-5b4a-3c2d-1a0b-9e8f7d6c5b4a",
+          "HospitalId": "e8d9d6d1-1c76-49d2-b3a5-1d7c6e5b99e8",
+          "VisitId": "c3c4d5e6-7d8e-9f0a-1b2c-3d4e5f6789a0"
+        }
+      ]
+    },
+    {
+      "Id": "ff0c022e-1aff-4ad8-1212-08db0378ac98",
+      "FirstName": "Liam",
+      "LastName": "Smith",
+      "Email": "liam.smith@gmail.com",
+      "DateOfBirth": "1989-03-12",
+      "CreatedDate": "2024-05-21",
+      "PatientHospitals": []
+    },
+    {
+      "Id": "ee0c022e-1aff-4ad8-2231-08db0378ac98",
+      "FirstName": "Olivia",
+      "LastName": "Jones",
+      "Email": "olivia.jones@gmail.com",
+      "DateOfBirth": "1994-02-28",
+      "CreatedDate": "2024-07-03",
+      "PatientHospitals": [
+        {
+          "PatientId": "ee0c022e-1aff-4ad8-2231-08db0378ac98",
+          "HospitalId": "b9c1e6b1-4b9d-4236-b72f-b65eebd6f5d1",
+          "VisitId": "d4e5f1a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
+        }
+      ]
+    },
+    {
+      "Id": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+      "FirstName": "Isabella",
+      "LastName": "Miller",
+      "Email": "isabella.miller@gmail.com",
+      "DateOfBirth": "1993-06-18",
+      "CreatedDate": "2024-03-03",
+      "PatientHospitals": [
+        {
+          "PatientId": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+          "HospitalId": "3b9a7e15-bc68-45b8-9b70-df3e29a2d4fc",
+          "VisitId": "e6f7a8b9-0c1d-2e3f-4a5b-6c7d8e9f0a1b"
+        }
+      ]
+    },
+    {
+      "Id": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "FirstName": "Ethan",
+      "LastName": "Garcia",
+      "Email": "ethan.garcia@gmail.com",
+      "DateOfBirth": "1987-04-23",
+      "CreatedDate": "2024-04-03",
+      "PatientHospitals": []
+    },
+    {
+      "Id": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+      "FirstName": "Aiden",
+      "LastName": "Moore",
+      "Email": "aiden.moore@gmail.com",
+      "DateOfBirth": "1991-09-14",
+      "CreatedDate": "2024-02-17",
+      "PatientHospitals": [
+        {
+          "PatientId": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+          "HospitalId": "ff0c022e-1aff-4ad8-2231-08db0378ac98",
+          "VisitId": "a7a5182a-985c-4bce-bce0-6038be112b7b"
+        },
+        {
+          "PatientId": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+          "HospitalId": "b1d8c7b6-05d8-4e3c-bb3a-5a7f64f7d2d3",
+          "VisitId": "b2b3d1a5-6c7d-8e9f-0a1b-2c3d4e5f6789"
+        },
+        {
+          "PatientId": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+          "HospitalId": "3b9a7e15-bc68-45b8-9b70-df3e29a2d4fc",
+          "VisitId": "d4e5f6a1-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
+        }
+      ]
+    },
+    {
+      "Id": "f6a7b8c9-0d1e-1f3a-4b5c-6d7e8f9a0b1c",
+      "FirstName": "Charlotte",
+      "LastName": "Taylor",
+      "Email": "charlotte.taylor@gmail.com",
+      "DateOfBirth": "1993-10-21",
+      "CreatedDate": "2024-04-12",
+      "PatientHospitals": []
+    },
+    {
+      "Id": "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+      "FirstName": "James",
+      "LastName": "Anderson",
+      "Email": "james.anderson@gmail.com",
+      "DateOfBirth": "1984-12-13",
+      "CreatedDate": "2024-02-02",
+      "PatientHospitals": []
+    },
+    {
+      "Id": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+      "FirstName": "Amelia",
+      "LastName": "Thomas",
+      "Email": "amelia.thomas@gmail.com",
+      "DateOfBirth": "1997-07-30",
+      "CreatedDate": "2024-01-12",
+      "PatientHospitals": []
+    }
+  ],
+  "Visits": [
+    {
+      "Id": "a7a5182a-995c-4bce-bce0-6038be112b7b",
+      "Date": "2023-08-22"
+    },
+    {
+      "Id": "a7a5182a-985c-4bce-bce0-6038be112b7b",
+      "Date": "2023-07-22"
+    },
+    {
+      "Id": "b2b3d4a5-6c7d-8e9f-0a1b-2c3d4e5f6789",
+      "Date": "2023-09-15"
+    },
+    {
+      "Id": "b2b3d1a5-6c7d-8e9f-0a1b-2c3d4e5f6789",
+      "Date": "2023-09-15"
+    },
+    {
+      "Id": "c3c4d5e6-7d8e-9f0a-1b2c-3d4e5f6789a0",
+      "Date": "2023-10-01"
+    },
+    {
+      "Id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+      "Date": "2023-10-25"
+    },
+    {
+      "Id": "d4e5f1a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+      "Date": "2023-10-25"
+    },
+    {
+      "Id": "d4e5f6a1-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+      "Date": "2023-04-15"
+    },
+    {
+      "Id": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+      "Date": "2023-11-10"
+    },
+    {
+      "Id": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+      "Date": "2023-11-30"
+    },
+    {
+      "Id": "a8b9c0d1-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+      "Date": "2023-12-15"
+    },
+    {
+      "Id": "b9c0d1e2-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+      "Date": "2024-01-05"
+    },
+    {
+      "Id": "c0d1e2f3-4a5b-6c7d-8e9f-0a1b2c3d4e5f",
+      "Date": "2024-02-20"
+    },
+    {
+      "Id": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+      "Date": "2024-03-12"
+    },
+    {
+      "Id": "a7b8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d",
+      "Date": "2023-01-05"
+    },
+    {
+      "Id": "f1a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b6c",
+      "Date": "2024-04-05"
+    },
+    {
+      "Id": "9990d1e2-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+      "Date": "2023-07-17"
+    },
+    {
+      "Id": "b9c0d1e2-3f4a-5b6c-7d8e-9f0a1b2c4444",
+      "Date": "2023-02-14"
+    }
+  ]
+}
