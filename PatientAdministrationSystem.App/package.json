@@ -8,7 +8,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build": "tsc -b && vite build",
-    "test": "jest"
+    "test": "tsc && jest"
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
