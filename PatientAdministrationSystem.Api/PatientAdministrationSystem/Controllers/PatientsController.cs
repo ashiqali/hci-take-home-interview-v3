@@ -4,20 +4,32 @@ using PatientAdministrationSystem.Application.Interfaces;
 
 namespace PatientAdministrationSystem.API.Controllers
 {
-    [Route("api/patients")]
+    [Route("api/v1/patients")]
     [ApiExplorerSettings(GroupName = "Patients")]
     [ApiController]
     public class PatientsController : ControllerBase
     {
-        private readonly IPatientsService _patientsService;
+        #region Fields
 
-        public PatientsController(IPatientsService patientsService)
+        private readonly IPatientsService _patientsService;
+        private readonly ILogger<PatientsController> _logger;
+
+        #endregion
+
+        #region Constructors
+
+        public PatientsController(IPatientsService patientsService, ILogger<PatientsController> logger)
         {
             _patientsService = patientsService;
+            _logger = logger;
         }
 
+        #endregion
+
+        #region Get All Patients
+
         /// <summary>
-        /// Get all patients.
+        /// Get all patients with optional pagination, sorting, and filtering.
         /// </summary>
         /// <returns>A list of patients</returns>
         [HttpGet]
@@ -30,9 +42,14 @@ namespace PatientAdministrationSystem.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                _logger.LogError(ex, "Error occurred while fetching all patients.");
+                return StatusCode(500, "Internal server error.");
             }
         }
+
+        #endregion
+
+        #region Get Patient by ID
 
         /// <summary>
         /// Get a patient by ID.
@@ -42,20 +59,30 @@ namespace PatientAdministrationSystem.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPatientById(Guid id)
         {
+            if (id == Guid.Empty)
+            {
+                return BadRequest("Invalid patient ID.");
+            }
+
             try
             {
                 var patient = await _patientsService.GetPatientByIdAsync(id);
                 if (patient == null)
                 {
-                    return NotFound();
+                    return NotFound("Patient not found.");
                 }
                 return Ok(patient);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                _logger.LogError(ex, "Error occurred while fetching patient by ID.");
+                return StatusCode(500, "Internal server error.");
             }
         }
+
+        #endregion
+
+        #region Get Patient Visits
 
         /// <summary>
         /// Get visits for a specific patient.
@@ -65,20 +92,30 @@ namespace PatientAdministrationSystem.API.Controllers
         [HttpGet("{id}/visits")]
         public async Task<IActionResult> GetPatientVisits(Guid id)
         {
+            if (id == Guid.Empty)
+            {
+                return BadRequest("Invalid patient ID.");
+            }
+
             try
             {
                 var visits = await _patientsService.GetPatientVisitsAsync(id);
                 if (visits == null || !visits.Any())
                 {
-                    return NotFound();
+                    return NotFound("No visits found for this patient.");
                 }
                 return Ok(visits);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                _logger.LogError(ex, "Error occurred while fetching patient visits.");
+                return StatusCode(500, "Internal server error.");
             }
         }
+
+        #endregion
+
+        #region Create Patient
 
         /// <summary>
         /// Create a new patient.
@@ -93,6 +130,11 @@ namespace PatientAdministrationSystem.API.Controllers
                 return BadRequest("Patient data is null.");
             }
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Invalid patient data.");
+            }
+
             try
             {
                 await _patientsService.CreatePatientAsync(patientDto);
@@ -100,9 +142,14 @@ namespace PatientAdministrationSystem.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                _logger.LogError(ex, "Error occurred while creating a new patient.");
+                return StatusCode(500, "Internal server error.");
             }
         }
+
+        #endregion
+
+        #region Update Patient
 
         /// <summary>
         /// Update an existing patient.
@@ -113,25 +160,42 @@ namespace PatientAdministrationSystem.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdatePatient(Guid id, [FromBody] PatientDto patientDto)
         {
+            if (id == Guid.Empty)
+            {
+                return BadRequest("Invalid patient ID.");
+            }
+
             if (patientDto == null)
             {
                 return BadRequest("Patient data is null.");
             }
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Invalid patient data.");
+            }
+
             try
             {
+                var patientExists = await _patientsService.GetPatientByIdAsync(id);
+                if (patientExists == null)
+                {
+                    return NotFound("Patient not found.");
+                }
+
                 await _patientsService.UpdatePatientAsync(id, patientDto);
                 return NoContent();
             }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                _logger.LogError(ex, "Error occurred while updating patient.");
+                return StatusCode(500, "Internal server error.");
             }
         }
+
+        #endregion
+
+        #region Delete Patient
 
         /// <summary>
         /// Delete a patient.
@@ -141,19 +205,45 @@ namespace PatientAdministrationSystem.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePatient(Guid id)
         {
+            if (id == Guid.Empty)
+            {
+                return BadRequest("Invalid patient ID.");
+            }
+
             try
             {
+                var patientExists = await _patientsService.GetPatientByIdAsync(id);
+                if (patientExists == null)
+                {
+                    return NotFound("Patient not found.");
+                }
+
                 await _patientsService.DeletePatientAsync(id);
                 return NoContent();
             }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                _logger.LogError(ex, "Error occurred while deleting patient.");
+                return StatusCode(500, "Internal server error.");
             }
         }
+
+        #endregion
+
+        #region Health Check
+
+        /// <summary>
+        /// Get the health status of the API.
+        /// </summary>
+        /// <returns>Health status</returns>
+        [HttpGet("health")]
+        public IActionResult GetHealthStatus()
+        {
+            // Simple health check, could be enhanced with more detailed checks
+            return Ok(new { Status = "Healthy" });
+        }
+
+        #endregion
+
     }
 }

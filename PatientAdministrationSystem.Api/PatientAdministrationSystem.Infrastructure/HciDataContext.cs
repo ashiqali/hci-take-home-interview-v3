@@ -13,12 +13,12 @@ public class HciDataContext : DbContext, IHciDataContext
     {
     }
 
-
     public DbSet<PatientEntity> Patients { get; set; } = null!;
 
     public DbSet<HospitalEntity> Hospitals { get; set; } = null!;
 
     public DbSet<VisitEntity> Visits { get; set; } = null!;
+
     public DbSet<PatientHospitalRelation> PatientHospitals { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
