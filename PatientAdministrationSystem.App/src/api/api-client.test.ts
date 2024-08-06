@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import axios  from 'axios';
+import axios, { AxiosResponse }  from 'axios';
 import { Patient, PatientVisit } from '../services/patient-interface';
 import { fetchPatients, getPatientById, fetchPatientVisits } from '../services/patient-service';
 import apiClient from './api-client';
@@ -78,7 +77,7 @@ describe('Patient Service', () => {
 
     it('should return 404 when no visits are found', async () => {
       const axiosError = new axios.AxiosError();
-      axiosError.response = { status: 404 } as any;
+      axiosError.response = { status: 404 } as AxiosResponse;
       mockedApiClient.get.mockRejectedValue(axiosError);
 
       const result = await fetchPatientVisits('1');
