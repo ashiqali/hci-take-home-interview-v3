@@ -3,7 +3,7 @@ import { Patient, PatientVisit } from '../services/patient-interface';
 import { fetchPatients, getPatientById, fetchPatientVisits } from '../services/patient-service';
 import apiClient from './api-client';
 
-jest.mock('../api/api-client');
+jest.mock('./api-client');
 const mockedApiClient = apiClient as jest.Mocked<typeof apiClient>;
 
 describe('Patient Service', () => {
